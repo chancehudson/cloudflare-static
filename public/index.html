@@ -2,6 +2,7 @@
     <head>
         <title>Hi!</title>
     </head>
+    <!-- we'll use flexbox in the body element and stretch it to fill the window -->
     <body style="display: flex; height: 100%; margin: 0px">
         <div
             id="root"
@@ -16,8 +17,11 @@
             <div>
                 <h2>Hello!</h2>
                 <p>it me</p>
+                <!-- set the id here so we can access it in the javascript below -->
                 <p id="emojis"></p>
             </div>
+            <!-- this spacer element fills to consume available space -->
+            <!-- it makes sure the footer is at the bottom -->
             <div id="spacer" style="display: flex; flex: 1"></div>
             <div id="footer" style="display: flex; flex-direction: column">
                 <a
