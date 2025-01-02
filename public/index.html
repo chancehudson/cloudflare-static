@@ -41,7 +41,7 @@
                     await new Promise((r) => setTimeout(r, delay));
                     text = `${text}${emojis.shift()}`;
                     el.textContent = text;
-                    delay = Math.max(4000, delay + 1000);
+                    delay = Math.min(4000, delay + 1000);
                 }
             }
         </script>
