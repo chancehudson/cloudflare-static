@@ -6,6 +6,8 @@ A simple example showing static content hosting on cloudflare.
 
 First install packages:
 
+[don't know what npm is?](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
 ```
 npm install
 ```
