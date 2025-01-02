@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Hi!</title>
+    </head>
+    <body style="display: flex; height: 100%; margin: 0px">
+        <div
+            id="root"
+            style="
+                align-items: center;
+                margin: 4px;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            "
+        >
+            <div>
+                <h2>Hello!</h2>
+                <p>it me</p>
+                <p id="emojis"></p>
+            </div>
+            <div id="spacer" style="display: flex; flex: 1"></div>
+            <div id="footer" style="display: flex; flex-direction: column">
+                <a
+                    href="https://github.com/chancehudson/cloudflare-static"
+                    target="_blank"
+                    >source</a
+                >
+            </div>
+        </div>
+
+        <script>
+            renderEmojis();
+
+            async function renderEmojis() {
+                const el = document.getElementById("emojis");
+                const emojis = "🙈 💅 💢 😘".split(" ");
+                let text = "";
+                let delay = 2000;
+                for (;;) {
+                    if (emojis.length === 0) break;
+                    await new Promise((r) => setTimeout(r, delay));
+                    text = `${text}${emojis.shift()}`;
+                    el.textContent = text;
+                    delay = Math.max(4000, delay + 1000);
+                }
+            }
+        </script>
+    </body>
+</html>
