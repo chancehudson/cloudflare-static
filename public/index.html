@@ -29,18 +29,30 @@
         </div>
 
         <script>
+            // call our emoji function immediately
             renderEmojis();
 
+            // we want to show the emojis below 1 at a time
             async function renderEmojis() {
-                const el = document.getElementById("emojis");
                 const emojis = "🙈 💅 💢 😘".split(" ");
+
+                // get the html element we want to show the emojis in
+                const el = document.getElementById("emojis");
+
                 let text = "";
                 let delay = 2000;
+
+                // we'll loop infinitely, until `break` is called
                 for (;;) {
+                    // if we're showing all emojis we're done
                     if (emojis.length === 0) break;
+                    // wait for `delay` milliseconds
                     await new Promise((r) => setTimeout(r, delay));
+                    // update our text string by removing the first element in the emojis string
                     text = `${text}${emojis.shift()}`;
+                    // show the updated text string
                     el.textContent = text;
+                    // change our delay to delay + 1000 or 4000, whichever is smaller
                     delay = Math.min(4000, delay + 1000);
                 }
             }
